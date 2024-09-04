@@ -1,30 +1,25 @@
-/* 1. 선택자와 변수 정의 부분 */
+// 1. 선택자와 변수 정의 부분
 const recognition = new (window.SpeechRecognition ||
   window.webkitSpeechRecognition)();
 recognition.lang = "ko-KR"; // 음성 인식 언어 설정
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-// chatbot.js에 이미 정의 되어있음. 나중에 처리하기
 const voiceButton = document.querySelector(".voice-button");
-const inputBoxSelect = document.querySelector(".input-box-select");
+const inputBox = document.querySelector(".input-box");
 
-/* 2. 함수 정의 부분 */
+// 2. 함수 정의 부분
 // 음성 인식을 시작하는 함수
 function startSpeechRecognition() {
+  voiceButton.classList.toggle("active");
   recognition.start();
   console.log("음성 입력을 기다리는 중...");
-}
-
-// 음성 음식 버튼 활성화 토글
-function voiceButtonActiveToggle() {
-  voiceButton.classList.toggle("active");
 }
 
 // 음성 인식 결과를 처리하는 함수
 function handleSpeechResult(event) {
   const transcript = event.results[0][0].transcript;
-  inputBoxSelect.value = transcript;
+  inputBox.value = transcript;
   console.log(`인식된 텍스트: ${transcript}`);
 }
 
@@ -36,13 +31,13 @@ function handleSpeechError(event) {
 // 음성 인식이 끝났을 때의 함수
 function handleSpeechEnd() {
   console.log("음성 인식 종료");
+  voiceButton.classList.remove("active");
 }
 
-/* 3. DOMContentLoaded 이벤트 핸들링 (간결하게) */
+// 3. DOMContentLoaded 이벤트 핸들링 (간결하게)
 document.addEventListener("DOMContentLoaded", function () {
   // 버튼 클릭 시 음성 인식 시작
   voiceButton.addEventListener("click", startSpeechRecognition);
-  voiceButton.addEventListener("click", voiceButtonActiveToggle);
 
   // 음성 인식 결과 및 오류 핸들링 설정
   recognition.addEventListener("result", handleSpeechResult);
