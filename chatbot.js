@@ -50,7 +50,7 @@ const beforeHomeBtn = `
   </button>
 `;
 
-const staticUrlAvatar = `<img src='/static/chatbot-front/images/avatar.png' alt="avatar"/>`;
+const staticUrlAvatar = `<img src='./images/avatar.png' alt="avatar"/>`;
 
 // URL에서 비자 카테고리 읽어오기
 const path = window.location.pathname;
