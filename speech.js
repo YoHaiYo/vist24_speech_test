@@ -6,7 +6,7 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
 const voiceButton = document.querySelector(".voice-button");
-const inputBox = document.querySelector(".input-box");
+// const inputBox = document.querySelector(".input-box");
 
 // 2. 함수 정의 부분
 // 음성 인식을 시작하는 함수
