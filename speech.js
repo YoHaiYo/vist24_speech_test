@@ -6,7 +6,7 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
 const voiceButton = document.querySelector(".voice-button");
-// const inputBox = document.querySelector(".input-box");
+const inputSelect = document.querySelector(".input-box");
 
 // 2. 함수 정의 부분
 // 음성 인식을 시작하는 함수
@@ -19,7 +19,7 @@ function startSpeechRecognition() {
 // 음성 인식 결과를 처리하는 함수
 function handleSpeechResult(event) {
   const transcript = event.results[0][0].transcript;
-  inputBox.value = transcript;
+  inputSelect.value = transcript;
   console.log(`인식된 텍스트: ${transcript}`);
 }
 
