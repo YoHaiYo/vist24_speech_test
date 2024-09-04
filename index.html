@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static '/favicon/favicon.ico' %}" />
+    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./chatbot.css" />
+    <title>front</title>
+  </head>
+  <body>
+    <div class="chatbot">
+      <!-- head -->
+      <div class="head">
+        <div class="head__container">
+          <img
+            src="{% static '/chatbot-front/images/logo.jpg' %}"
+            alt="logo"
+            class="logo"
+          />
+          <span class="title">VISA24</span>
+        </div>
+      </div>
+      <!-- content -->
+      <div class="content">
+        <div class="content__container">
+          <div class="chat__container">
+            <div class="chat__wrapper"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- bottom -->
+      <div class="bottom">
+        <div class="bottom__container">
+          <div class="input__container">
+            <input class="input-box" type="text" placeholder="채팅입력" />
+            <button type="button">
+              <svg
+                class="send-button"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+              >
+                <g id="icon" transform="translate(-1819 -884)">
+                  <circle
+                    id="타원_2666"
+                    data-name="타원 2666"
+                    cx="15"
+                    cy="15"
+                    r="15"
+                    transform="translate(1819 884)"
+                    fill="#13b256"
+                  />
+                  <g id="그룹_19700" data-name="그룹 19700">
+                    <rect
+                      id="area"
+                      width="12"
+                      height="16"
+                      transform="translate(1828 891)"
+                      fill="none"
+                    />
+                    <path
+                      id="패스_16448"
+                      data-name="패스 16448"
+                      d="M9.5,19.3,13.8,15l4.3,4.3"
+                      transform="translate(1820.203 877.041)"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                    <path
+                      id="패스_16449"
+                      data-name="패스 16449"
+                      d="M18,4.5V18.417"
+                      transform="translate(1816 887.543)"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
+          <button class="voice-button">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="8" y="2" width="8" height="13" rx="4" fill="#000000" />
+              <path
+                d="M5 11C5 12.8565 5.7375 14.637 7.05025 15.9497C8.36301 17.2625 10.1435 18 12 18C13.8565 18 15.637 17.2625 16.9497 15.9497C18.2625 14.637 19 12.8565 19 11"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 21V19"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./chatbot.js"></script>
+    <script src="./speech.js"></script>
+  </body>
+</html>
